@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    <title>더 스테일 서면 해링턴 타워 </title>
+</head>
+<body>
+    <!--header-->
+    <header id="header" class="header_pc">
+        <!--menu-->
+        <nav class="nav_menu">
+            <ul>
+                <li class="logo">
+                    <a href="../index.html">서면<br>해링턴타워</a>
+                </li>
+                <li>
+                    <a href="brand.html">브랜드</a>
+                    <!-- <ul class="depth2">
+                        <li><a href="#">브랜드소개</a></li>
+                        <li><a href="#">사업개요</a></li>
+                        <li><a href="#">오시는 길</a></li>
+                    </ul> -->
+                </li>
+                <li>
+                    <a href="premium.html">프리미엄</a>
+                    <!-- <ul class="depth2">
+                        <li><a href="#">입지환경</a></li>
+                        <li><a href="#">프리미엄6</a></li>
+                    </ul> -->
+                </li>
+                <li>
+                    <a href="unit_info.html">상품안내</a>
+                    <!-- <ul class="depth2">
+                        <li><a href="#">UNIT</a></li>
+                        <li><a href="#">모델하우스</a></li>
+                    </ul> -->
+                </li>
+                <li>
+                    <a href="info2.html">상업시설</a>
+                    <!-- <ul class="depth2">
+                        <li><a href="#">프리미엄</a></li>
+                    </ul> -->
+                </li>
+                <li>
+                    <a href="reception.html">
+                        <button>관심고객등록</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="tel:1811-6970">
+                        <p>☏ 1811 - 6970</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="tab_menu">
+            <ul class="list">
+                <li class="is_on">
+                    <a href="#tab1" class="btn">프리미엄</a>
+                </li>
+            </ul>
+            <div class="cont_area">
+                <div id="tab1" class="cont">
+                    <img src="../img/fac.jpg" alt="img">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer_wrap">
+            <div class="footer_menu">
+                <ul>
+                    <li>
+                        <a href="../web/brand.html">브랜드</a>
+                    </li>
+                    <li>
+                        <a href="../web/brand.html">프리미엄</a>
+                    </li>
+                    <li>
+                        <a href="../web/brand.html">상품안내</a>
+                    </li>
+                    <li>
+                        <a href="../web/brand.html">상업시설</a>
+                    </li>
+                    <li>
+                        <a href="../web/brand.html">관심고객등록</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer_info">
+                <!-- <div class="address">
+                    <h3>더 스테일 <br> 서면 해링턴타워</h3>
+                    <p>오피스텔 <br> 부산광역시 부산진구 부전동 <br> 168-291번지 외 6필지</p>
+                </div> -->
+                <div class="copy">
+                    <p>Copyrights © 더스테일 서면 해링턴타워 All Rights Reserved.</p>
+                </div>
+                <!-- <div class="number">
+                    <h3>대표번호 & 사이드</h3>
+                    <ul>
+                        <li>
+                            <a href="tel:1811-6970">1811 - 6970</a>
+                        </li>
+                        <li>
+                            <a href="https://naver.me/5vM6NCUa" target="_blank">찾아오시는 길</a>
+                        </li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+    <script> 
+        AOS.init(); // 자바스크립트로 init()을 해야 동작
+
+        const tabList = document.querySelectorAll('.tab_menu .list li');
+        const contents = document.querySelectorAll('.tab_menu .cont_area .cont')
+        let activeCont = ''; // 현재 활성화 된 컨텐츠 (기본:#tab1 활성화)
+
+        for(var i = 0; i < tabList.length; i++){
+            tabList[i].querySelector('.btn').addEventListener('click', function(e){
+            e.preventDefault();
+            for(var j = 0; j < tabList.length; j++){
+                // 나머지 버튼 클래스 제거
+                tabList[j].classList.remove('is_on');
+
+                // 나머지 컨텐츠 display:none 처리
+                contents[j].style.display = 'none';
+            }
+
+            // 버튼 관련 이벤트
+            this.parentNode.classList.add('is_on');
+
+            // 버튼 클릭시 컨텐츠 전환
+            activeCont = this.getAttribute('href');
+            document.querySelector(activeCont).style.display = 'block';
+            });
+        }
+    </script>
+</body>
+</html>
