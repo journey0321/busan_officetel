@@ -25,6 +25,14 @@
     display: none;
 }
 
+.nav_menu .m_menu_btn span {
+    display: flex;
+    justify-content: flex-start;
+    width: 24px;
+    border: 1px solid #333;
+    margin-bottom: 6px;
+}
+
 .nav_menu ul {
     display: flex;
     align-items: center;
@@ -71,13 +79,29 @@
     font-size: 4vh;
 }
 
+/* mobile ul -------------- */
+
+@media all and (max-width: 768px) {
+    .nav_menu {
+        width: 710px;
+    }
+
+    .nav_menu .m_menu_btn {
+        display: block;
+    }
+
+    .nav_menu > ul {
+        display: none;
+    }
+}
+
 
 /* main section1----------- */
 
 .main_visual {
     width: 100%;
     height: 100vh;
-    margin-top: 100px;
+    margin-top: 80px;
     position: relative;
     overflow: hidden;
 }
