@@ -71,10 +71,14 @@
 
 @media all and (max-width: 768px) {
     .nav_menu {
-        width: 710px;
+        margin: 0 20px
     }
 
     .nav_menu .m_menu_btn {
+        display: block;
+    }
+
+    .nav_menu .navbar_menu.active {
         display: block;
     }
 
